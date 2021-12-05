@@ -1,8 +1,10 @@
 from flask import Flask,jsonify
 
+API = "User"
+
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api/users")
 def index():
-    return jsonify({'name':__name__})
+    return jsonify({'name':API})
     
