@@ -8,8 +8,8 @@ services:
       - SHOPESVC_ADDR=shopesvc:5000
       - CATALOGUESVC_ADDR=cataloguesvc:5000
     volumes:
-      - ./nginx/nginx.conf:/tmp/nginx.conf
-    command: /bin/bash "envsubst < /tmp/nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+      - ./nginx:/etc/nginx/conf.d
+    #command: /bin/bash "envsubst < /tmp/nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     ports:
       - 8080:80
   usersvc:
